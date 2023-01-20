@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href='@{/CSS/style.css}' rel='stylesheet'>
+	<link th:href='@{/CSS/bootstrap.min.css}' rel='stylesheet'>
+</head>
+<body>
+<div th:insert="top"></div>
+<div th:insert="all"></div>
+		<div class="fluid-container my-4 mx-2">
+			<div class="card" style="background-color:rgba(0,0,0,0.6);">
+			<div th:if="${!blist.empty}" class="card-header" style="background-color: black;">
+				<div th:insert="book/pagination"></div>
+			</div>
+				<div class="card-body text-white">
+					<div class="dvv" th:if="${blist.empty}">
+						<label class="laa">Sorry, No book added yet</label>
+					</div>
+					<div th:if="${!blist.empty}">
+						<table class="table text-white">
+							<thead>
+								<tr>
+									<th class="head">Book Id</th>
+									<th class="head">Title</th>
+									<th class="head">Author</th>
+									<th class="head">Category ID</th>
+									<th class="head">Publisher ID</th>
+									<th class="head">Copies</th>
+									<th class="head">Price</th>
+									<th class="head" style="color:#EE82EE">Availability</th>
+									<th class="head" style="color:#EE82EE">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="book:${blist}">
+									<td th:text="${book.bookid}"></td>
+									<td th:text="${book.title}"></td>
+									<td th:text="${book.author}"></td>
+									<td th:text="${book.categoryid}"></td>
+									<td th:text="${book.publisherid}"></td>
+									<td th:text="${book.copies}"></td>
+									<td th:text="${'&#8377;'+book.price}"></td>
+									<td th:if="${book.copies>0}" style="color: #00FF00">In Stock</td>
+									<td th:if="${book.copies==0}" style="color: #00FF00">Out of Stock</td>
+									<td>
+										<a th:href="@{edit(bookid=${book.bookid})}" style="color: #F0E68C">Edit |</a>
+										<a th:href="@{remove(bookid=${book.bookid})}" style="color: #F0E68C"> Remove</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>	
+				<div class="dvv">
+					<a class="btn btn-success font-weight-bold" href="add">Add new Book</a>
+					<a class="btn btn-warning font-weight-bold" href="../home">Back</a>
+				</div>
+		</div>
+</body>
+</html>

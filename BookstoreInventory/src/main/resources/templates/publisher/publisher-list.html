@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href='@{/CSS/style.css}' rel='stylesheet'>
+	<link th:href='@{/CSS/bootstrap.min.css}' rel='stylesheet'>
+</head>
+<body>
+<div th:insert="top"></div>
+<div th:insert="all"></div>
+		<div class="fluid-container my-4 mx-2 ">
+			<div class="card" style="background-color:rgba(0,0,0,0.6);">
+				<div class="card-body text-white">
+					<div class="dvv" th:if="${plist.empty}">
+						<label class="laa">Sorry, Publisher list is empty</label>
+					</div>
+					<div th:if="${!plist.empty}">
+						<table class="table text-white">
+							<thead>
+								<tr>
+									<th class="head">Publisher Id</th>
+									<th class="head">Publisher</th>
+									<th class="head">Address</th>
+									<th class="head">Email</th>
+									<th class="head" style="color:#EE82EE">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="pub:${plist}">
+									<td th:text="${pub.publisherid}"></td>
+									<td th:text="${pub.publisher}"></td>
+									<td th:text="${pub.address}"></td>
+									<td th:text="${pub.email}"></td>
+									<td>
+										<a th:href="@{edit(publisherid=${pub.publisherid})}" style="color: #F0E68C">Edit |</a>
+										<a th:href="@{remove(publisherid=${pub.publisherid})}" style="color: #F0E68C"> Remove</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>	
+				<div class="dvv">
+					<a class="btn btn-success font-weight-bold" href="add">Add new Publisher</a>
+					<a class="btn btn-warning font-weight-bold" href="../home">Back</a>
+				</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href='@{/CSS/style.css}' rel='stylesheet'>
+	<link th:href='@{/CSS/bootstrap.min.css}' rel='stylesheet'>
+</head>
+<body>
+<div th:insert="top"></div>
+<div th:insert="all"></div>
+	<div class="fluid-container my-4 mx-2">
+		 <div class="card justify-content-center align-items-center" style="background-color:rgba(0,0,0,0.6);">
+    		 <div class="card-body text-white">
+    		    <input type="text" class="px-3 py-1">
+    		    <br>
+    		    <a href="#"  style="text-decoration: none; color: white"><b>Search By Name</b></a>
+         	 </div>
+         	 
+    		 <div class="card-body text-white">
+    			 <input type="text" class="px-3 py-1">
+    			 <br>
+    			 <a href="#"  style="text-decoration: none; color: white"><b>Search By Category</b></a>
+         	 </div>
+         	 
+         </div>
+	</div>
+</body>
+</html>

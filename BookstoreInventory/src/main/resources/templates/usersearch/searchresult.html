@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href='@{/CSS/style.css}' rel='stylesheet'>
+	<link th:href='@{/CSS/bootstrap.min.css}' rel='stylesheet'>
+</head>
+<body>
+	<div th:insert="usertop"></div>
+	<div th:insert="userall"></div>
+	
+	<div class="container my-4">
+		<div class="card"  style="background-color:rgba(0,0,0,0.5)">
+			<div class="card-body text-white">
+			
+			 	<div class="dvv" th:if="${blist.empty}">
+					<label class="laa">Sorry, No Book Available</label>
+				</div>
+			
+				<div th:if="${!blist.empty}">  
+					<table class="table text-white">
+						<thead>
+							<tr>
+								<td class="head">Title</td>
+								<td class="head">Author</td>
+								<td class="head">Price</td>
+								<td class="head">Availability</td>
+								<td class="head" style="color:#EE82EE">Action</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="book:${blist}">
+								<td th:text="${book.title}"></td>
+								<td th:text="${book.author}"></td>
+								<td th:text="${'&#8377;'+book.price}"></td>
+								<td th:if="${book.copies>0}" style="color: #00FF00">In Stock</td>
+								<td th:if="${book.copies==0}" style="color: #00FF00">Out of Stock</td>
+								<td th:if="${book.copies>0}">
+									<a href="">Purchase Now</a>
+								</td>
+								<td th:if="${book.copies==0}">Not Available</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

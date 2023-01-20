@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href='@{/CSS/style.css}' rel='stylesheet'>
+	<link th:href='@{/CSS/bootstrap.min.css}' rel='stylesheet'>
+</head>
+<body>
+<div th:insert="top"></div>
+<div th:insert="all"></div>
+	<form action="save" method="post">
+	<div class="fluid-container mx-2 justify-content-center align-items-center">
+    <div class="card" style="background-color: rgba(0,0,0,0.6);">
+    <div class="card-body text-white">
+		<div class="form-outline mb-2">
+            <label class="form-label" >Enter Book Title</label>
+			<input type="text" name="title" class="form-control form-control-sm" required="required"/>
+        </div>
+
+ 		<div class="form-outline mb-2">
+            <label class="form-label">Enter Author Name</label>
+			<input type="text" name="author" class="form-control form-control-sm" required="required"/>
+		</div>
+
+		<div class="row form-group">
+ 		<div class="col-md-6">
+            <label class="form-label">Select Category</label>
+            <select name="categoryid" id="category" class="form-control form-control-sm" required="required">
+            	<option th:each="cat:${clist}" th:value="${cat.categoryid}" th:text="${cat.category}">
+            </select>
+		</div>
+
+ 		<div class="col-md-6">
+            <label class="form-label">Select Publisher</label>
+            <select name="publisherid" id="publisher" class="form-control form-control-sm" required="required">
+            	<option th:each="pub:${plist}" th:value="${pub.publisherid}" th:text="${pub.publisher}">
+            </select>
+		</div>
+		</div>
+
+ 		<div class="form-outline mb-2">
+            <label class="form-label">Enter Number of copies</label>
+			<input type="text" name="copies" class="form-control form-control-sm" required="required"/> 
+		</div>
+
+ 		<div class="form-outline mb-2">
+            <label class="form-label">Enter Price</label>
+			<input type="text" name="price" class="form-control form-control-sm" required="required"/> 
+		</div>
+					
+        <div class="pt-1">
+       		 <button class="btn btn-success">Add Book</button>
+       		 <button class="btn btn-warning" onclick="history.back()">Cancel</button>
+        </div>
+     </div>
+     </div>
+     </div>
+	</form>
+</body>
+</html>

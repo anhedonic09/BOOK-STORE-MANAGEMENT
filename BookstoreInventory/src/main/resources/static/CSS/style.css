@@ -1,0 +1,111 @@
+body{
+	background-image: url("/Images/bg.jpg");
+	background-size: cover;
+}
+a{
+	text-decoration: none;
+}
+.ho:hover{
+	background-color: yellow;
+	color: black
+}
+.dv{
+	text-align: center;
+	margin-top:4vw;
+}
+.dvv{
+	text-align: center;
+	padding: 1vw;
+}
+span{
+	color:red;
+}
+.la{
+	font-size:1.5vw;
+}
+.laa{
+	font-size:2vw;
+}
+.laaa{
+	font-size:2vw;
+	text-decoration: underline;
+}
+.head{
+	font-size:1.3v;
+	font-weight: bold;
+}
+.dvcid{
+	width:40%;
+	padding:1vw .8vw;
+	background-color: teal;
+	border:.2vw solid green;
+	border-radius: .4vw;
+}
+.tb{
+	font-size:1.4vw;
+	width:100%;
+	border-radius: .4vw;
+}
+.bg{
+	background-color:white;
+}
+.btr{
+	cursor: pointer;
+	color:white;
+	background-color:FF99AA;
+	padding:.2vw 1.2vw;
+	border-radius: .4vw;
+	font-size:1.4vw;
+	border:none;
+}
+.ta{
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+.tah{
+	background-color: orange;
+	font-size:1.8vw;
+	color:white;
+	font-family: sans-serif;
+	text-align: center;
+}
+.tab{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2vw;
+	background-color: cyan;	
+}
+.tdp{
+	padding:2vw 1vw;
+}
+.an{
+	font-size:1.8vw;
+	margin-right: .8vw;
+	text-decoration: underline;
+}
+.ab{
+	font-size:1.5vw;
+}
+.anc{
+	font-size:2.1vw;
+	margin-right: .8vw;
+	text-decoration: underline;
+	color:red;
+}
+.strt-btn{
+	position: relative;
+}
+.pg-top{
+	font-size: 2vw;
+	font-weight:bold;
+	margin-right: .5vw; 
+	margin-left: .5vw; 
+	color:#FAEBD7;
+	
+}
+.crnt-btn{
+	font-size: 2.4vw;
+	font-weight: bold;
+	color: #00BFFF;
+}

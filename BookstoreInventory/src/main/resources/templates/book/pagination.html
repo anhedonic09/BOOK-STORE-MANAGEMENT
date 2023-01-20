@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<table style="width: 100%">
+<tr>
+	<td style="width: 30%; text-align: left; color: orange">
+		<label th:text="${pn+' of '+tp}" style="font-size: 1.5vw"></label>
+	</td>
+	<td style="width: 40%; text-align: center">
+		<a th:if="${tp<=5}" th:href="@{list(pn=${i})}" th:each="i:${#numbers.sequence(1,tp,1)}" th:text="${i}" th:class="${pn==i?'crnt-btn':'pg-top'}"></a>
+		<a th:if="${tp>5}" th:href="@{list(pn=${i})}" th:each="i:${#numbers.sequence(1,5,1)}" th:text="${i}" th:class="${pn==i?'crnt-btn':'pg-top'}"></a>
+		<a th:if="${tp>5}" th:href="@{list(pn=${pn+1})}" th:onclick="|return ${pn<tp}|" class="pg-top">next</a>
+	</td>
+	<td style="width: 30%; text-align: right">
+		<a class="btl" style="background-color: #00ABC8; color:white" href="#">Search</a>
+	</td>
+</tr>
+</table>
+</html>
